@@ -132,6 +132,32 @@
       flex-shrink: 0;
     }
 
+
+    .open-file-btn {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #009EDB;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 7px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.18s, transform 0.12s;
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(0,158,219,0.25);
+    }
+    .open-file-btn:hover {
+      background: #007ab8;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(0,158,219,0.35);
+    }
+    .open-file-btn svg { flex-shrink: 0; }
+
     /* ===== CARDS ===== */
     .card {
       background: #fff;
@@ -1032,7 +1058,20 @@
   <!-- TAB 3: 제작물 체크리스트 -->
   <!-- ============================================================ -->
   <div id="tab-checklist" class="tab-content">
-    <div class="section-title"><span class="dot"></span>제작물 체크리스트</div>
+    <div class="section-title">
+      <span class="dot"></span>제작물 체크리스트
+      <a class="open-file-btn"
+         href="https://www.dropbox.com/scl/fi/8m6l5uwm1f78fsjryppcq/260304-_.pdf?rlkey=o4nwodahc7igfw6tuu88ip475&st=khob3bkw&raw=1"
+         target="_blank"
+         rel="noopener noreferrer">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/>
+          <line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+        원본 파일 열기
+      </a>
+    </div>
 
     <div class="grid-2">
       <div>
