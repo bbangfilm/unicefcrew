@@ -724,7 +724,7 @@
         <div class="stat-label">제작물 종류</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number" style="color:#e53935">D-50</div>
+        <div class="stat-number" id="dday-counter" style="color:#e53935">D-??</div>
         <div class="stat-label">캠페인 런칭까지</div>
       </div>
     </div>
@@ -1763,6 +1763,28 @@
     const dashOffset = circumference - (circumference * overallPct / 100);
     document.getElementById('overall-circle').style.strokeDashoffset = dashOffset;
   }
+
+  // ===== D-DAY 카운터 =====
+  function updateDDay() {
+    var launch = new Date('2026-04-21T00:00:00');
+    var today  = new Date();
+    today.setHours(0, 0, 0, 0);
+    var diff = Math.ceil((launch - today) / (1000 * 60 * 60 * 24));
+    var el = document.getElementById('dday-counter');
+    if (!el) return;
+    if (diff > 0) {
+      el.textContent = 'D-' + diff;
+      el.style.color = '#e53935';
+    } else if (diff === 0) {
+      el.textContent = 'D-Day';
+      el.style.color = '#e53935';
+    } else {
+      el.textContent = 'D+' + Math.abs(diff);
+      el.style.color = '#64748b';
+    }
+  }
+  updateDDay();
+
 </script>
 </body>
 </html>
